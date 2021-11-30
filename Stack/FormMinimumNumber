@@ -1,0 +1,23 @@
+package stackQuestions;
+
+import java.util.Stack;
+// its complexity is big O of n -- O(n)
+
+public class FormMinimumNumber {
+	public static void main(String[] args) {
+		String inp = "ID";
+		Stack<Integer> st = new Stack<>();
+
+		for (int i = 0; i <= inp.length(); i++) {
+			st.push(i + 1);
+
+			if (i == inp.length() || inp.charAt(i) == 'I') { // if ( inp.charAt(i) == 'I' || i == inp.length()) we can not write this as 
+				while (!st.isEmpty()) {                      // for i==3 it will try to find character at i==3 which is not available hence we can not write its inverse
+					System.out.print(st.pop());
+				}
+
+			}
+		}
+
+	}
+}
