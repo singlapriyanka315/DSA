@@ -1,0 +1,57 @@
+package stackQuestions;
+
+import java.util.Stack;
+
+public class CelebrityProblem {
+	public static void main(String[] args) {
+		
+		int[][] arr = {{0, 0, 1, 0},
+				       {0, 0, 1, 0},
+				       {0, 0, 0, 0},
+				       {0, 0, 1, 0}};
+		
+		Stack<Integer> st= new Stack<>();
+		//pehle sabko stack mein daalo
+		
+		for(int i=0; i< arr.length; i++) { // ider rows push ho rahi hai 
+			st.push(i);
+		}
+		
+		while(st.size() !=1) {
+			int banda1= st.pop();
+			int banda2= st.pop();
+			
+			//kya banda 1 bande 2 ko janta hai? matlab arr[b1][b2]=1
+			if(arr[banda1][banda2]==1) {
+				st.push(banda2);
+				
+			}
+			else {
+				//ni janta
+				st.push(banda1);
+			}
+		}
+		int potentialCeleb =st.pop();
+		//check karo li ye celeb hai ya ni
+		
+		for(int c=0;c< arr.length;c++) { 
+			if(arr[potentialCeleb][c] ==1) {// as celebrity kisi ko ni jane ga so har col 0 hona chaiye
+				System.out.print("No celebrity!");
+				return;// aage code ni chale ga
+			}
+			
+		}
+		
+		for(int r=0 ;r< arr.length;r++) { 
+			if(r != potentialCeleb && arr[r][potentialCeleb] == 0){// as celebrity kisi ko ni jane ga so har col 0 hona chaiye usko chod k 
+				System.out.print("No celebrity!");
+				return;// aage code ni chale ga
+			}
+			
+		}
+		System.out.print("celebrity is "+ potentialCeleb);
+		
+		                
+	}
+
+}
