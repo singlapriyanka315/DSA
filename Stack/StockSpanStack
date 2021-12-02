@@ -1,0 +1,29 @@
+package stackQuestions;
+
+import java.util.*;
+// we are using stack data structure in this stockSpan problem because it follows LIFO.kyuki pehle left to right we one by one with the help of loop 0
+// index to last tak jate hai and then previous building ko check karte hai ki choti hai k ni hence 0- 1- 2- 3 then check karne k liye 3- 2- 1- 0 hence we used stack here
+
+public class StockSpanStack {
+	public static void main(String[] args) {
+		Stack<Integer> st = new Stack<>();
+
+		int[] ht = { 1, 2, 4, 3, 5 };
+		int[] span = new int[ht.length];
+
+		span[0] = 1;
+		System.out.print(span[0] + "");
+		st.push(0); // hum indexes pusg kar rahe hai
+		
+		for(int curr=1; curr<ht.length; curr++) {
+			while(!st.isEmpty() && ht[st.peek()] < ht[curr]) {
+				st.pop();
+			}
+			
+			span[curr] =st.isEmpty() ? curr+1 : curr-st.peek();
+			System.out.print(span[curr] + "" );
+			st.push(curr); // aage move karne se pehle khud ko stack mein push kar dega
+		}
+	}
+
+}
