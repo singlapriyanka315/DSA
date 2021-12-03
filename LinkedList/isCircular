@@ -20,3 +20,14 @@ class GfG
 	
     }
 }
+
+or
+
+Node temp = head;
+while(head!=null){
+    if(head.next == temp)
+    return true;
+    head = head.next;
+    
+}
+return false;
