@@ -1,0 +1,22 @@
+class GfG
+{
+    boolean isCircular(Node head)
+    {
+	// Your code here
+	if(head==null) return true;
+	
+	Node fast=head;
+	Node slow= head;
+	while(fast!=null && fast.next!=null){
+	    fast=fast.next.next;
+	    slow=slow.next;
+	    if(slow==fast){
+	        return true;
+	    }
+	}
+	return false;
+	
+	
+	
+    }
+}
