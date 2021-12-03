@@ -1,0 +1,31 @@
+class Solution
+{
+    //Function to insert a node at the beginning of the linked list.
+    Node insertAtBeginning(Node head, int x)
+    {
+        // code here
+        Node node= new Node(x);
+        node.next=head;
+        return node;
+    }
+    
+    //Function to insert a node at the end of the linked list.
+    Node insertAtEnd(Node head, int x)
+    {
+        // code here
+        if(head==null){
+            Node nn= new Node(x);
+            return nn;
+        }
+        Node curr= head;
+        for(;curr.next!=null;curr=curr.next){
+            
+        }
+        
+        Node lastNode= new Node(x);
+        curr.next=lastNode;
+        lastNode.next=null;
+         return head;
+        
+    }
+}
