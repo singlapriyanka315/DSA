@@ -1,0 +1,20 @@
+//https://practice.geeksforgeeks.org/problems/detect-loop-in-linked-list/1/?category[]=Linked%20List&category[]=Linked%20List&problemStatus=solved&difficulty[]=-1&difficulty[]=0&page=1&query=category[]Linked%20ListproblemStatussolveddifficulty[]-1difficulty[]0page1category[]Linked%20List
+
+class Solution {
+    //Function to check if the linked list has a loop.
+    public static boolean detectLoop(Node head){
+        // Add code here
+        Node fast= head;
+        Node slow= head;
+        while(fast!=null && fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+            if(fast==slow){
+                return true;
+            
+            }
+        }
+        
+        return false;
+    }
+}
