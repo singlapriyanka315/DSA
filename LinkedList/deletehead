@@ -1,0 +1,9 @@
+Node deleteNode(Node head)
+    {
+        Node curr = head;
+        if(head==null) return head;
+        else{
+            head=head.next;
+            return head;
+        }
+        
