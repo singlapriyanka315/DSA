@@ -1,0 +1,14 @@
+ public boolean search(Node head, int x)
+    {
+        // Base case
+        if (head == null)
+            return false;
+ 
+        // If key is present in current node,
+        // return true
+        if (head.data == x)
+            return true;
+ 
+        // Recur for remaining list
+        return search(head.next, x);
+    }
