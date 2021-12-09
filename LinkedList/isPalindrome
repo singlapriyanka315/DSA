@@ -1,0 +1,33 @@
+class Solution
+{
+    //Function to check whether the list is palindrome.
+    boolean isPalindrome(Node head) 
+    {
+        //Your code here
+        Node i= head;
+        int val;
+        
+        Stack<Integer> st= new Stack<>();
+        while(i!=null){
+    
+            st.push(i.data);
+            i=i.next;
+        }
+        i=head;
+         while(i!=null){
+             if(st.peek()==i.data)
+             {
+                 st.pop();
+                 
+             }
+            i=i.next;
+        }
+        if(!st.isEmpty()){
+            return false ;
+        }
+        else{
+            return true;
+        }
+    }    
+}
+
