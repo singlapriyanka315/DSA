@@ -8,7 +8,7 @@ class GfG
        if(ind == 1)
        return x.data;
        
-       for(int i=1;x.next!=null && i<ind;i++){
+       for(int i=1;i<ind;i++){
            x=x.next;
        }
         return x.data;
