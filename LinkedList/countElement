@@ -14,3 +14,27 @@ class Solution
         return c;
     }
 }
+
+
+or with recursion
+
+class Solution
+{
+      
+    
+    public static int count(Node head, int key)
+    {
+        int freq=0;
+        //code here
+        if(head == null) {
+        return freq;
+        }
+        if(head.data == key) {
+        freq=freq+1;
+        }
+        
+        return count(head.next, key) + freq;
+        
+        
+    }
+}
