@@ -1,0 +1,16 @@
+class Solution
+{
+    public static int count(Node head, int key)
+    {
+        //code here
+        int c=0;
+        while(head!=null){
+            if(head.data== key)
+            c=c+1;
+            
+            head= head.next;
+        }
+        
+        return c;
+    }
+}
