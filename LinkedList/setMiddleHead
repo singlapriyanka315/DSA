@@ -1,0 +1,37 @@
+static Node head;
+     
+    /* Function to get the middle and
+    set at beginning of the linked list*/
+    static void setMiddleHead()
+    {
+        if (head == null)
+            return;
+      
+        // To traverse list nodes one
+        // by one
+        Node slow = head;
+      
+        // To traverse list nodes by
+        // skipping one.
+        Node fast = head;
+      
+        // To keep track of previous of middle
+        Node prev = null;
+        while (fast != null &&
+               fast != null) {
+      
+            /* for previous node of middle node */
+            prev = one_node;
+      
+            /* move one node each time*/
+            fast = fast.next.next;
+      
+            /* move two node each time*/
+            slow = slow.next;
+        }
+      
+        /* set middle node at head */
+        prev.next = prev.next.next;
+        slow.next = head;
+        head = slow;
+    }
