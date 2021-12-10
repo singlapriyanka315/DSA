@@ -1,0 +1,23 @@
+class Solution
+{
+    public Node removeDuplicates(Node head) 
+    {
+       Set<Integer> st= new HashSet<Integer>();
+       Node curr= head;
+       Node prev= null;
+       
+       while(curr!=null){
+           if(st.contains(curr.data)){
+               prev.next=curr.next;// skips that duplicate
+               curr=curr.next;
+           }
+           else{
+               st.add(curr.data);
+               prev=curr;// add curr in prev linkedlist
+               curr=curr.next;
+           }
+       }
+       return head;
+       
+    }
+}
