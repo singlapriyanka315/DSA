@@ -16,3 +16,23 @@ class Solution {
     
 }
 }
+------------------------------------------------OR------------------------------------------------------------------
+
+class Solution {
+    Node deleteMid(Node head) {
+        if(head==null || head.next==null) return null;
+        // This is method only submission.
+        // You only need to complete the method.
+        Node fast= head;
+        Node slow= head;
+        Node prev= null;
+        while(fast!=null && fast.next!=null){
+            prev = slow;
+            fast=fast.next.next;
+            slow=slow.next;
+    }
+    prev.next =prev.next.next;
+    return head;
+    
+}
+}
