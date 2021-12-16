@@ -1,0 +1,9 @@
+public int countNodes(Node root){
+if(root==null){
+return 0;
+}
+int leftA= countNodes( root.left);
+int rightA=countNodes(root.right);
+int total= leftA + rightA + 1;
+return total;
+}
