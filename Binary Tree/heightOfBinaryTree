@@ -1,0 +1,12 @@
+// basically finding height/depth is also known traversal because it is preorder traversal//
+
+public int height(Node root){
+if(root==null){
+return 0;
+}
+int leftHeight= height(root.left);
+int rightHeight= height(root.right);
+int total= Math.max(leftHeight, rightHight) + 1;
+return total;
+
+}
