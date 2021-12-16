@@ -1,0 +1,16 @@
+public int diameter(Node root){
+
+if(root==null){
+return 0;
+}
+int leftH = hight(root.left);
+int rightH= height(root.right);//as done in maxheight question
+int rootDia= leftH+ rightH;
+
+int leftDia = diameter(root.left);
+int rightDia = diameter(root.right);
+
+int maxDia= Math.max(rootDia, Math.max(leftDia, rightDia);
+return maxDia;
+
+}
