@@ -10,8 +10,8 @@ int total= Math.max(leftHeight, rightHight) + 1;
 return total;
 
 }
-time complexity is O(n) where n is no. of nodes
-space complexity is O(n)
+//time complexity is O(n) where n is no. of nodes
+//space complexity is O(n)
 -----------------------------------------------------------------------------  OR  ------------------------------------------------------------------------------------------------
 
 class Solution {
