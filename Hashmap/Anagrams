@@ -1,0 +1,37 @@
+// leetcode https://leetcode.com/problems/group-anagrams/submissions/
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        return sol(strs);
+        
+    }
+    private static List<List<String>> sol(String[] arr){
+        Map<String, List<String>> map = new HashMap<>();
+        
+        for(String str : arr){
+            char[] strArr= str.toCharArray();//'e','a','t'
+            Arrays.sort(strArr);// a, e ,t 
+            String sortStr= new String(strArr);
+            
+            if(map.containsKey(sortStr)){
+                List<String> valueList= map.get(sortStr);
+                valueList.add(str);
+                map.put(sortStr, valueList);
+                
+                
+            }
+            else{
+                List<String> valueList= new ArrayList<>();
+                valueList.add(str);
+                map.put(sortStr, valueList);
+                
+            }
+            
+        }
+        
+        List<List<String>> ans= new ArrayList<>();
+        ans.addAll(map.values());
+        return ans;
+        
+    }
+}
