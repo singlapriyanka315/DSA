@@ -1,0 +1,12 @@
+class Solution {
+    static String delAlternate(String S) {
+        // code here
+        String s1="";
+        for(int i=0;i<S.length();i++){
+            if((i+1)%2 != 0){
+               s1= s1 + S.charAt(i);
+            }
+        }
+        return s1;
+    }
+}
