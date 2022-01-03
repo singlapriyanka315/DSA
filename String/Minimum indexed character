@@ -1,0 +1,21 @@
+class Solution{
+    
+    // Function to find the character in patt which is present in str at min index
+    public static String printMinIndexChar(String S, String patt){
+        
+        // Your code here
+        
+        // you don't need to print anything
+        for(int i=0;i<S.length();i++){
+            for(int j=0;j<patt.length();j++){
+                if(S.charAt(i)==patt.charAt(j)){
+                    String s = "";
+                    s=s + S.charAt(i);
+                    return s;
+                }
+            }
+        }
+        return "$";
+    }
+    
+}
