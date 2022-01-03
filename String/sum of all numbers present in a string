@@ -1,0 +1,25 @@
+class Solution
+{
+    //Function to calculate sum of all numbers present in a string.
+    public static long findSum(String str)
+    {
+        // your code here
+        char ch;
+        String s="";
+        str= str + " ";
+        long sum=0;
+        for(int i=0;i<str.length();i++){
+             ch= str.charAt(i);
+             if(Character.isDigit(ch))
+                 s= s + ch;
+             
+             else if(s.length()>0){
+                 sum = sum + Integer.parseInt(s);
+                 s ="";
+                 
+             }
+        }
+        return sum;
+    }
+    
+}
