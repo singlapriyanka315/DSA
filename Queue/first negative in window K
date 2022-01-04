@@ -1,0 +1,32 @@
+class Compute {
+    
+    public long[] printFirstNegativeInteger(long A[], int N, int K)
+    {
+        int j=0;
+        
+        Deque<Integer> q = new ArrayDeque<>();
+        long[] ans= new long[N-K+1];
+        for(int i=0;i<N;i++){
+            while(!q.isEmpty() && A[q.getLast()] >=0){
+                q.removeLast();
+            }
+            
+            q.addLast(i);
+            if(q.getFirst() == i-K ){
+                q.removeFirst();
+            }
+            
+            if(i>=K-1){  
+                
+                if(A[q.getFirst()]>=0){
+                    ans[j++]=0;
+                }
+                else{
+                ans[j++]=A[q.getFirst()];
+                }
+            }
+        }
+        return ans;
+        
+    }
+}
