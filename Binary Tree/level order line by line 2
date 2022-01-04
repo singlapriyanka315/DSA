@@ -1,0 +1,44 @@
+class Level_Order_Traverse
+{
+    //Function to return the level order traversal line by line of a tree.
+    static ArrayList <ArrayList<Integer>> levelOrder(Node root) 
+    {
+        // Your code here
+        ArrayList<ArrayList<Integer>> list= new ArrayList<>();
+      
+       
+        if(root == null) return list;
+     ArrayList<Integer> temp = new ArrayList<>();
+        
+        Queue<Node> q= new LinkedList<Node>();
+        q.add(root);
+        q.add(null);
+        
+        while(!q.isEmpty()){
+            
+            Node curr= q.remove();
+            
+            if (curr==null){
+                 list.add(temp);
+                if(!q.isEmpty()) {
+                   
+                    q.add(null);
+              temp = new ArrayList<>();
+                }
+            }
+            
+            else{
+            temp.add(curr.data);
+                
+            if(curr.left!=null)
+                q.add(curr.left);
+            
+            if(curr.right!=null)
+                q.add(curr.right);
+                
+            }
+        }
+        
+        return list;
+    }
+}
