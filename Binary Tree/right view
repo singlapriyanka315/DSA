@@ -1,0 +1,26 @@
+//------------------------reverse of left -----------------------
+
+
+class Solution{
+    int max= 0;
+    //Function to return list containing elements of right view of binary tree.
+    ArrayList<Integer> rightView(Node root) {
+      // Your code here
+      ArrayList<Integer> list= new ArrayList<>();
+      right(root, list,1);
+      return list;
+      
+    }
+    
+    void right(Node root,  ArrayList<Integer> list, int level){
+        if(root == null) return ;
+        
+        if(level>max){
+            list.add(root.data);
+            max=level;
+        }
+    right(root.right, list, level+1);
+    right(root.left, list, level+1);
+    
+    }
+}
