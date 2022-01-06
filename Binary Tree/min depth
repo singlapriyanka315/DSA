@@ -1,0 +1,15 @@
+class Solution {
+    public int minDepth(TreeNode root) {
+        
+        if(root==null) return 0;
+        
+        int lefth=  minDepth(root.left);
+        int righth= minDepth(root.right);
+        if(lefth==0 || righth==0){
+            return Math.max( lefth, righth) +1;// skewed trees
+        }
+        
+        return Math.min( lefth, righth) +1;
+        
+    }
+}
