@@ -9,7 +9,7 @@ class Solution {
             return Math.max( lefth, righth) +1;// skewed trees
         }
         
-        return Math.min( lefth, righth) +1;
+        return Math.min( lefth, righth) +1; // as at the end root need to be included.
         
     }
 }
