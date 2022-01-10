@@ -1,5 +1,5 @@
 //------------------------reverse of left -----------------------
-
+// here we are using max to keep record of visited levels of tree.
 
 class Solution{
     int max= 0;
