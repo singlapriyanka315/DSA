@@ -1,0 +1,40 @@
+class Quad {
+		Node currNode;
+		boolean isSelfDone;
+		boolean isLeftDone;
+		boolean isRightDone;
+
+		public Quad(Node currNode) {
+			this.currNode = currNode;
+		}
+	}
+
+	private void preOrderIter(Node root) {
+		// TODO Auto-generated method stub
+
+		Stack<Quad> st = new Stack<>();
+		st.push(new Quad(root));
+
+		while (!st.isEmpty()) {
+			Quad top = st.peek();
+			if (!top.isSelfDone) { //self
+				System.out.println(top.currNode.val);
+				top.isSelfDone = true;
+			} else if (!top.isLeftDone) {//left
+				if (top.currNode.left != null) {
+					st.push(new Quad(top.currNode.left));
+				}
+				top.isLeftDone = true;
+			} else if (!top.isRightDone) {//right
+
+				if (top.currNode.right != null) {
+					st.push(new Quad(top.currNode.right));
+				}
+
+				top.isRightDone = true;
+			} else {
+				st.pop();
+			}
+		}
+	}
+}
