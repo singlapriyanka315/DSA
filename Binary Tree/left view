@@ -1,3 +1,6 @@
+// here we are using max to keep record of visited levels of tree.
+
+
 class Tree
 {
      int max= 0;
