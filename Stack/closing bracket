@@ -1,0 +1,23 @@
+https://practice.geeksforgeeks.org/problems/closing-bracket-index5900/1
+
+class Sol
+{
+    int closing (String s, int pos)
+    {
+        int pos1= -1;
+        // your code here 
+        Stack<Character> st= new Stack<>();
+        st.push(s.charAt(pos));
+        for(int i= pos+1; i<s.length();i++){
+             if(s.charAt(i) == '[')
+                st.push(s.charAt(pos));
+             if(s.charAt(i) == ']'){
+                st.pop();
+                pos1 = i;
+             }
+             if(st.isEmpty())
+             break;
+        }
+        return pos1;
+    }
+}
