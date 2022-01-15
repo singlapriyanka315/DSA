@@ -1,6 +1,8 @@
+// 2 diff treees are same
 class Solution
 {
     //Function to check if two trees are identical.
+    
 	boolean isIdentical(Node root1, Node root2)
 	{
 	    // Code Here
@@ -21,7 +23,7 @@ class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
         
         if(p==null && q==null) return true;
-        if (q == null || p == null) return false;
+        if (q == null || p == null) return false;  // if p and q dono mein se koi bhi null ho then they are not same
         if(p.val!= q.val){
             return false;
         }
