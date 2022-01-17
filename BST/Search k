@@ -1,3 +1,4 @@
+//time complexity big O(h)
 class Tree {
     // Function to find the minimum element in the given BST.
     boolean search(Node node, int k) {
