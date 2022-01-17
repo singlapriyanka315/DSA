@@ -1,0 +1,14 @@
+class Solution {
+    // Function to insert a node in a BST.
+    Node insert(Node root, int k) {
+        if(root==null) return new Node(k);
+        
+        if(k<root.data){
+            root.left= insert(root.left, k); // going to return node to left side
+        }
+        if(k>root.data){
+            root.right= insert(root.right, k);// going to return node to right side
+        }
+        return root;
+    }
+}
