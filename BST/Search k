@@ -1,0 +1,14 @@
+class Tree {
+    // Function to find the minimum element in the given BST.
+    boolean search(Node node, int k) {
+        if(node==null) return false;
+        if(node.data==k){
+        return true;}
+        
+        if(k<node.data){
+         return search(node.left, k);
+    }
+    else{
+    return search(node.right, k);
+    }
+}
