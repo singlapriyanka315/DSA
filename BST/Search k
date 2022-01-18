@@ -1,4 +1,22 @@
 //time complexity big O(h)
+
+class Solution {
+    public TreeNode searchBST(TreeNode root, int val) {
+        
+        if(root==null) return null;
+        
+        if(val<root.val){
+            return searchBST(root.left, val);
+        }
+        else if(val> root.val){
+            return searchBST(root.right, val);
+        }
+        else
+            return root;
+        
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class Tree {
     // Function to find the minimum element in the given BST.
     boolean search(Node node, int k) {
