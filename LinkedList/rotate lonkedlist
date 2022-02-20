@@ -1,0 +1,34 @@
+class Solution{
+   public Node rotate(Node head, int k) {
+       if(head == null) return null;
+       
+       int n = 0;
+       Node t = head;
+       while(t!=null){
+           n++;
+           t = t.next;
+       }
+       if(k >= n){
+           return head;
+       }
+       
+       // move to the last node
+       Node lastNode = head;
+       while(lastNode.next != null){
+           lastNode = lastNode.next;
+       }
+       
+       Node temp = head;
+       Node Head = head;
+       int i = 0;
+       while(i<(k-1)%n){
+           i++;
+           temp = temp.next;
+       }
+       
+       Node newHead = temp.next;
+       temp.next = null;
+       lastNode.next = Head;
+       return newHead;
+   }
+}
